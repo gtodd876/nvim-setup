@@ -5,4 +5,4 @@ require 'user.colorscheme'
 require 'user.completions'
 require 'user.lsp'
 require 'user.telescope'
-
+require 'user.treesitter'

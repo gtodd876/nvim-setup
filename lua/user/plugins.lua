@@ -59,11 +59,6 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    'saecki/crates.nvim',
-    tag = 'v0.1.0',
-    requires = { 'nvim-lua/plenary.nvim' },
-  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -76,6 +71,13 @@ return packer.startup(function(use)
 
   --Telescope
   use "nvim-telescope/telescope.nvim"
+
+  -- TreeSitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
