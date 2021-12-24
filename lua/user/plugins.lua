@@ -51,6 +51,9 @@ return packer.startup(function(use)
         vim.cmd('colorscheme rose-pine')
     end
   })
+  use "akinsho/toggleterm.nvim"
+  use "terrortylor/nvim-comment"
+  use "folke/which-key.nvim"
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -78,7 +81,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "p00f/nvim-ts-rainbow"
-
+  
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
