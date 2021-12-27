@@ -58,7 +58,7 @@ return packer.startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  } 
+  }
   use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -87,7 +87,9 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "p00f/nvim-ts-rainbow"
-  use "windwp/nvim-ts-autotag"  
+  use "windwp/nvim-ts-autotag"
+  -- Gitsigns
+  use {"lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
