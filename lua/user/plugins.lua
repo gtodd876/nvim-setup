@@ -54,6 +54,12 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "terrortylor/nvim-comment"
   use "folke/which-key.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  } 
+  use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
