@@ -93,6 +93,9 @@ return packer.startup(function(use)
   use {"lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
+  -- Alpha (Dashbaord)
+  use "goolord/alpha-nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
