@@ -13,11 +13,12 @@ local mappings = {
       f = {"<cmd>Telescope find_files<cr>", "Find Files"},
       r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
       b = {"<cmd>Telescope buffers<cr>", "Buffers"},
-      o = {"<cmd>Telescope oldfiles<cr>", "Recent Files"},
-    }
+      o = {"<cmd>Telescope oldfiles<cr>", "Recent Files"}
+    },
+    z = {name = "Focus Mode", z = {":ZenMode<cr>", "Zen Mode"}, t = {":Twilight<cr>", "Twilight"}}
   }
 }
-local opts = {silent = true, noremap = true,}
+local opts = {silent = true, noremap = true}
 
 wk.register(mappings, opts)
 

@@ -4,12 +4,7 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
+    "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path
   }
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
@@ -25,17 +20,15 @@ vim.cmd [[
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
+if not status_ok then return end
 
 -- Have packer use a popup window
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
-  },
+      return require("packer.util").float {border = "rounded"}
+    end
+  }
 }
 
 -- Install your plugins here
@@ -48,20 +41,19 @@ return packer.startup(function(use)
     'rose-pine/neovim',
     as = 'rose-pine',
     config = function()
-        vim.cmd('colorscheme rose-pine')
+      vim.cmd('colorscheme rose-pine')
     end
   })
   use "akinsho/toggleterm.nvim"
   use "terrortylor/nvim-comment"
   use "folke/which-key.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+  use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
-  use 'kyazdani42/nvim-tree.lua'
-   -- cmp plugins
+  use "kyazdani42/nvim-tree.lua"
+  use "folke/zen-mode.nvim"
+  use "folke/twilight.nvim"
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -71,24 +63,21 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    -- LSP
+  -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server nvim-lsp-installer
   -- Formatting/Diagnostics
   use "simrat39/rust-tools.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
 
-  --Telescope
+  -- Telescope
   use "nvim-telescope/telescope.nvim"
 
   -- TreeSitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
   -- Gitsigns
@@ -98,7 +87,5 @@ return packer.startup(function(use)
   -- Alpha (Dashbaord)
   use "goolord/alpha-nvim"
 
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
+  if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
