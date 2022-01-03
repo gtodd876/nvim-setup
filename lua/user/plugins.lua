@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
   use "kyazdani42/nvim-tree.lua"
+  use "moll/vim-bbye"
   use "folke/zen-mode.nvim"
   use "folke/twilight.nvim"
   -- cmp plugins

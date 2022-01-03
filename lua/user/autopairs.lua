@@ -1,4 +1,15 @@
-require('nvim-autopairs').setup({check_ts = true})
+local status_ok, npairs = pcall(require, "nvim-autopairs")
+if not status_ok then return end
+
+npairs.setup {
+  check_ts = true,
+  ts_config = {
+    lua = {'string'}, -- it will not add a pair on that treesitter node
+    javascript = {'template_string'},
+    java = false -- don't check treesitter on java
+  },
+  disable_filetype = {"TelescopePrompt"}
+}
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
