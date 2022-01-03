@@ -45,7 +45,7 @@ return packer.startup(function(use)
     end
   })
   use "akinsho/toggleterm.nvim"
-  use "terrortylor/nvim-comment"
+  use "numToStr/Comment.nvim"
   use "folke/which-key.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use {'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -61,7 +61,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-
+  use "windwp/nvim-autopairs"
   -- snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -80,6 +80,7 @@ return packer.startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "p00f/nvim-ts-rainbow"
   use "windwp/nvim-ts-autotag"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
   -- Gitsigns
   use {"lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
   -- Automatically set up your configuration after cloning packer.nvim
